@@ -52,6 +52,9 @@ const CardContent = styled.div`
     font-size: 0.9rem;
     color: ${({ theme }) => theme.colors.grey700};
   }
+  small {
+    color: ${({ theme }) => theme.colors.grey700};
+  }
 `
 const ImgWrapper = styled.div`
   border-top-left-radius: ${BORDER_RADIUS};

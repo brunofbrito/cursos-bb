@@ -1,9 +1,9 @@
-import React from 'react';
-import styled from 'styled-components';
-import ClassroomTitle from './ClassroomTitle';
-import ClassroomMedia from './ClassroomMedia';
-import ClassroomNote from './ClassroomNote';
-import VideoSelector from './VideoSelector';
+import React from "react"
+import styled from "styled-components"
+import ClassroomTitle from "./ClassroomTitle"
+import ClassroomMedia from "./ClassroomMedia"
+import ClassroomNote from "./ClassroomNote"
+import VideoSelector from "./VideoSelector"
 
 const Wrapper = styled.section`
   padding: 2rem 1rem;
@@ -12,7 +12,7 @@ const Wrapper = styled.section`
       padding: 3rem 1rem;
     }
   `}
-`;
+`
 const Top = styled.div`
   display: flex;
   flex-direction: column;
@@ -21,7 +21,7 @@ const Top = styled.div`
       flex-direction: row;
     }
   `}
-`;
+`
 const MediaWrapper = styled.div`
   flex: 1;
   position: relative;
@@ -31,7 +31,7 @@ const MediaWrapper = styled.div`
       margin-bottom:0;
     }
   `}
-`;
+`
 
 function Classroom({ className }) {
   return (
@@ -45,7 +45,7 @@ function Classroom({ className }) {
       </Top>
       <ClassroomNote />
     </Wrapper>
-  );
+  )
 }
 
-export default Classroom;
+export default Classroom
