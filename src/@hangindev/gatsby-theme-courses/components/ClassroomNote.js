@@ -2,9 +2,10 @@ import React from "react"
 import styled from "styled-components"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { usePageValue } from "../context/PageContext"
+import findIndex from "lodash/findIndex"
+import NowPlaying from "./NowPlaying"
 
 const Wrapper = styled.div`
-  margin: 0 auto;
   padding-top: 1rem;
   h1,
   h2,
@@ -23,11 +24,11 @@ const Wrapper = styled.div`
     padding-bottom: 0.5rem;
   }
   a {
-    color: #ce6a85;
+    color: var(--accent);
     transition: all 0.1s linear;
     font-weight: 700;
     &:hover {
-      border-bottom: 4px solid #ce6a85;
+      color: var(--accent-hover);
     }
   }
   ul {
@@ -41,13 +42,27 @@ const Wrapper = styled.div`
 `
 
 function ClassroomNote({ className }) {
-  const { currentCourse, currentLesson } = usePageValue()
+  const { location, currentCourse, currentLesson } = usePageValue()
+  const { lessons } = currentCourse
+  let nowPlaying
+  const nowPlayingIndex = findIndex(lessons, ["slug", location.pathname])
+  if (nowPlayingIndex !== -1) {
+    nowPlaying = lessons[nowPlayingIndex]
+  }
   const mdxBody =
     currentLesson && currentLesson.body
       ? currentLesson.body
       : currentCourse.body
   return (
     <Wrapper className={className}>
+      {currentLesson && (
+        <NowPlaying
+          index={nowPlayingIndex + 1}
+          lessons={lessons.length}
+          title={currentCourse.title}
+          duration={currentLesson.duration}
+        />
+      )}
       {mdxBody && <MDXRenderer>{mdxBody}</MDXRenderer>}
     </Wrapper>
   )

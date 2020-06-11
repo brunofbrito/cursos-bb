@@ -1,37 +1,31 @@
 import React from "react"
 import styled from "styled-components"
 import PropTypes from "prop-types"
-import AutoplaySwitch from "./AutoplaySwitch"
+import durationInText from "../utils/durationInText"
 
-const Header = styled.div`
-  margin-bottom: 0.5rem;
-  > h3 {
-    margin-top: 1rem;
+const VideoStatus = styled.div`
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  span {
+    color: var(--grey);
+    font-size: 1rem;
+    margin-left: 1rem;
   }
 `
 
-const SwitchWrapper = styled.div`
-  position: absolute;
-  top: 0;
-  right: 1rem;
-`
-
-function NowPlaying({ index, totalLength, title }) {
+function NowPlaying({ index, lessons, title, duration }) {
   return (
-    <Header>
-      <SwitchWrapper>
-        <AutoplaySwitch />
-      </SwitchWrapper>
-      <small>
-        Vídeo {index + 1}/{totalLength}
-      </small>
-      <h3>{title}</h3>
-    </Header>
+    <VideoStatus>
+      {index}/{lessons}: {title}
+      <span>{durationInText(duration)}</span>
+    </VideoStatus>
   )
 }
 NowPlaying.propTypes = {
   index: PropTypes.number.isRequired,
-  totalLength: PropTypes.number.isRequired,
+  lessons: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
+  duration: PropTypes.number.isRequired,
 }
 export default NowPlaying

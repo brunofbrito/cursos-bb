@@ -2,12 +2,11 @@ import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 import findIndex from "lodash/findIndex"
-import NowPlaying from "./NowPlaying"
 import { usePageValue } from "../context/PageContext"
 
 const ButtonText = styled.h6`
   margin: 0;
-  background-color: #ff9300;
+  background-color: var(--accent);
   color: white;
   font-size: 1.2rem;
   text-align: center;
@@ -18,7 +17,7 @@ const ButtonText = styled.h6`
   letter-spacing: 0.02em;
   transition: all 300ms;
   &:hover {
-    opacity: 0.9;
+    background-color: #cc4e43;
   }
 `
 
@@ -32,14 +31,7 @@ function VideoSelectorHeader({ className }) {
   }
   return (
     <div className={className}>
-      {nowPlaying && (
-        <NowPlaying
-          index={nowPlayingIndex}
-          totalLength={lessons.length}
-          title={nowPlaying.title}
-        />
-      )}
-      {!nowPlaying && lessons && lessons[0] && (
+      {nowPlayingIndex === -1 && (
         <Link to={lessons[0].slug}>
           <ButtonText>Começar Curso</ButtonText>
         </Link>

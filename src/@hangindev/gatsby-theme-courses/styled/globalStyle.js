@@ -1,17 +1,25 @@
 const globalStyle = `
-html {
+* {
   box-sizing: border-box;
-  font-size: 16px;
+  margin: 0;
+  padding: 0;
 }
 
-*,
 *:before,
 *:after {
   box-sizing: inherit;
 }
 
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Raleway', sans-serif;
+  font-variant-numeric: lining-nums;
+  -moz-font-feature-settings:"lnum" 1; 
+  -moz-font-feature-settings:"lnum=1"; 
+  -ms-font-feature-settings:"lnum" 1; 
+  -o-font-feature-settings:"lnum" 1; 
+  -webkit-font-feature-settings:"lnum" 1; 
+  font-feature-settings:"lnum" 1;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body,
@@ -24,8 +32,7 @@ h6,
 p,
 ol,
 ul {
-  margin: 0;
-  padding: 0;
+  
   font-weight: normal;
   color: rgb(52, 63, 72);
 }
