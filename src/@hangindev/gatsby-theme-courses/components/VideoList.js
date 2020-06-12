@@ -11,6 +11,9 @@ const List = styled.ul`
   padding: 0;
   max-height: 300px;
   overflow-y: auto;
+  @media (max-width: 640px) {
+    max-height: 120px;
+  }
   li {
     margin: 0;
     border-bottom: none;
@@ -53,6 +56,12 @@ const ListItem = styled.div`
     color: var(--dark-grey);
     &[data-watched="true"] {
       color: var(--grey);
+    }
+  }
+  @media (max-width: 640px) {
+    p {
+      font-size: 0.8rem;
+      padding: 0.7rem;
     }
   }
 `

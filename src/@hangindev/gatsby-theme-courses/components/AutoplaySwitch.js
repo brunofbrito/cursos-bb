@@ -28,7 +28,7 @@ function AutoplaySwitch() {
             })
           }
           id="Autoplay"
-        />{" "}
+        />
       </label>
     </Switch>
   )

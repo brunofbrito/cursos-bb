@@ -60,7 +60,7 @@ function ClassroomNote({ className }) {
         <NowPlaying
           index={nowPlayingIndex + 1}
           lessons={lessons.length}
-          title={currentCourse.title}
+          title={currentLesson.title}
           duration={currentLesson.duration}
         />
       )}

@@ -15,7 +15,9 @@ const TopBar = styled.header`
 const Header = () => {
   return (
     <TopBar>
-      <img src={Logo} alt="Logotipo BrunoBrito.PT" />
+      <a href="https://brunobrito.pt">
+        <img src={Logo} alt="Logotipo BrunoBrito.PT" />
+      </a>
     </TopBar>
   )
 }

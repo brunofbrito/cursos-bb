@@ -22,6 +22,13 @@ const BackNav = styled.nav`
     height: 20px;
     margin-right: 0.75rem;
   }
+  @media (max-width: 640px) {
+    font-size: 14px;
+    svg {
+      height: 14px;
+      margin-right: 0.5rem;
+    }
+  }
 `
 
 function ClassroomTitle() {

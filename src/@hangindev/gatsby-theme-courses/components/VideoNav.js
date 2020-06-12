@@ -30,6 +30,16 @@ const Nav = styled.nav`
     margin-left: 0.75rem;
     margin-right: 0;
   }
+  @media (max-width: 640px) {
+    font-size: 14px;
+    svg {
+      height: 14px;
+      margin-right: 0.5rem;
+    }
+    svg:last-child {
+      margin-left: 0.5rem;
+    }
+  }
 `
 
 function VideoNav() {
