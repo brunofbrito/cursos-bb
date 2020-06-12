@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Cursos BrunoBrito.PT`,
-    description: `Cursos gratuitos de Marketing Digital e Programação Web, desenvolvidos por Bruno Brito.`,
+    title: `BrunoBrito.PT`,
+    description: `Cursos gratuitos de Marketing Digital e Programação Web em português, desenvolvidos por Bruno Brito.`,
     author: `@the_bammer`,
   },
   plugins: [

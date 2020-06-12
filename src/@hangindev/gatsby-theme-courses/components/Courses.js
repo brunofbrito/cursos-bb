@@ -6,7 +6,7 @@ import CoursesList from "./CoursesList"
 function Courses() {
   return (
     <Layout>
-      <SEO title="Cursos - BrunoBrito.PT" />
+      <SEO title="Lista de Cursos" />
       <div className="title-bar">
         <h1>Lista de Cursos</h1>
       </div>

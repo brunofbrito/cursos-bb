@@ -3,6 +3,7 @@ import { Link } from "gatsby"
 import { Location } from "@reach/router"
 import { usePageValue } from "../context/PageContext"
 import styled from "styled-components"
+import SEO from "./SEO"
 import findIndex from "lodash/findIndex"
 
 const BackNav = styled.nav`
@@ -41,6 +42,7 @@ function ClassroomTitle() {
   }
   return (
     <>
+      <SEO title={nowPlaying ? nowPlaying.title : currentCourse.title} />
       <div className="title-bar">
         <h1>{nowPlaying ? nowPlaying.title : currentCourse.title}</h1>
       </div>
