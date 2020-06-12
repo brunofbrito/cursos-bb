@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import VideoList from "./VideoList"
-import AutoPlaySwitch from "./AutoPlaySwitch"
+import AutoplaySwitch from "./AutoplaySwitch"
 
 const Selector = styled.div`
   width: 100%;
@@ -14,7 +14,7 @@ function VideoSelector() {
   return (
     <Selector>
       <VideoList />
-      <AutoPlaySwitch />
+      <AutoplaySwitch />
     </Selector>
   )
 }
