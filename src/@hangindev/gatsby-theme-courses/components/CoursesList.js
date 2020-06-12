@@ -15,7 +15,6 @@ const List = styled.div`
 function CoursesList() {
   const { courses } = usePageValue()
   if (!courses || courses.length === 0) return <p>Sem cursos disponíveis.</p>
-  console.log(courses)
   return (
     <List className="highlow">
       {courses.map(course => (

@@ -6,7 +6,7 @@ import findIndex from "lodash/findIndex"
 import NowPlaying from "./NowPlaying"
 
 const Wrapper = styled.div`
-  padding-top: 1rem;
+  padding-top: var(--medium);
   h1,
   h2,
   h3 {
@@ -20,6 +20,7 @@ const Wrapper = styled.div`
     font-size: 1.7rem;
   }
   p {
+    font-size: 17px;
     line-height: 1.5rem;
     padding-bottom: 0.5rem;
   }

@@ -11,6 +11,7 @@ const BackNav = styled.nav`
   padding: 24px 0;
   display: flex;
   align-items: center;
+  line-height: 42px;
   a {
     color: var(--grey);
   }

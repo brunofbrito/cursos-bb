@@ -1,26 +1,20 @@
 import React from "react"
 import styled from "styled-components"
 import VideoList from "./VideoList"
+import AutoPlaySwitch from "./AutoPlaySwitch"
 
 const Selector = styled.div`
-  margin: 0 1rem;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  ${({ theme }) => `
-    ${theme.media.desktop} {
-      width: 380px;
-    }
-  `}
-  p {
-    margin: 0;
-  }
+  width: 100%;
+  background: var(--light-grey);
+  box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.1);
+  padding: 1rem 0;
 `
 
-function VideoSelector({ className }) {
+function VideoSelector() {
   return (
-    <Selector className={className}>
+    <Selector>
       <VideoList />
+      <AutoPlaySwitch />
     </Selector>
   )
 }

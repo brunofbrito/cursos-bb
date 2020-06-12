@@ -51,15 +51,6 @@ a {
   text-decoration: none;
 }
 
-.active div {
-  background: #ff9100;
-}
-
-.active p {
-  color: white;
-}
-
-
 `
 
 export default globalStyle

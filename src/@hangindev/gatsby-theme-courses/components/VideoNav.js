@@ -7,6 +7,7 @@ const NavBar = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: var(--xl);
 `
 
 const Nav = styled.nav`

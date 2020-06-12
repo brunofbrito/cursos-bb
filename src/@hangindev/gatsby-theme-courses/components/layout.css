@@ -7,6 +7,7 @@
   --grey: #9b9b9b;
   --dark-grey: #1e1e1e;
   --xl: 90px;
+  --medium: 50px;
 }
 
 .container {
@@ -45,6 +46,7 @@ a {
 @media (max-width: 640px) {
   :root {
     --xl: 54px;
+    --medium: 30px;
   }
   .title-bar h1 {
     font-size: 29px;

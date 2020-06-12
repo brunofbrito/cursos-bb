@@ -9,40 +9,54 @@ const List = styled.ul`
   list-style-type: none;
   margin: 0;
   padding: 0;
-  max-height: 310px;
+  max-height: 300px;
   overflow-y: auto;
   li {
     margin: 0;
-    border: 1px solid #e7e7e7;
     border-bottom: none;
+    border-bottom: 1px solid #e7e7e7;
     &:last-child {
-      border-bottom: 1px solid #e7e7e7;
+      border-bottom: none;
     }
+  }
+  .active p {
+    color: var(--dark-grey);
+    font-weight: 700;
+    &:hover {
+      color: var(--dark-grey);
+    }
+  }
+  p:hover {
+    color: var(--accent);
   }
 `
 const ListItem = styled.div`
   display: flex;
   align-items: center;
+  justify-content: space-between;
   p {
+    color: var(--dark-grey);
     margin: 0;
-    font-size: 0.9rem;
-    padding: 0.5rem;
+    font-size: 1.25rem;
+    padding: 1rem;
   }
   p.lessonTitle {
     transition: all 200ms;
-    border-left: 4px solid #e7e7e7;
     &[data-watched="true"] {
-      border-left: 4px solid #ff9100;
+      color: var(--grey);
+      &:hover {
+        color: var(--accent);
+      }
+    }
+  }
+  small {
+    color: var(--dark-grey);
+    &[data-watched="true"] {
+      color: var(--grey);
     }
   }
 `
-const Duration = styled.small`
-  margin-left: 0.5em;
-  border-radius: 1px;
-  padding: 0.2em 0.4em;
-  background: #efefef;
-  color: ${({ theme }) => theme.colors.grey500};
-`
+
 function VideoList({ className }) {
   const [{ watched }] = useAppValue()
   const { currentCourse } = usePageValue()
@@ -50,6 +64,7 @@ function VideoList({ className }) {
   return (
     <List className={className}>
       {/* TODO: creating skeleton */}
+
       {lessons &&
         lessons.map((lesson, index) => {
           const lessonWatched = !!watched[lesson.id]
@@ -57,11 +72,14 @@ function VideoList({ className }) {
             <li key={lesson.slug}>
               <Link to={lesson.slug} activeClassName="active">
                 <ListItem>
-                  <p>{index + 1}</p>
                   <p className="lessonTitle" data-watched={lessonWatched}>
                     {lessonWatched ? "✓ " : ""}
-                    {lesson.title}
-                    <Duration>{durationInText(lesson.duration)}</Duration>{" "}
+                    {`${index + 1}. ${lesson.title}`}
+                  </p>
+                  <p>
+                    <small data-watched={lessonWatched}>
+                      {durationInText(lesson.duration)}
+                    </small>
                   </p>
                 </ListItem>
               </Link>
