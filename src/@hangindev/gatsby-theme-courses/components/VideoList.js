@@ -9,7 +9,7 @@ const List = styled.ul`
   list-style-type: none;
   margin: 0;
   padding: 0;
-  max-height: 300px;
+  max-height: 150px;
   overflow-y: auto;
   @media (max-width: 640px) {
     max-height: 120px;

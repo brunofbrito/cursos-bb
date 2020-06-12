@@ -67,7 +67,7 @@ const CoursePreview = ({
   const totalDuration = durationInLongText(
     lessons.reduce((pv, cv) => pv + cv.duration, 0)
   )
-  console.log(teacherName)
+  const lastUpdatedFormatted = moment(lastUpdated).format("L")
   return (
     <Card>
       <Link to={slug}>
@@ -75,7 +75,7 @@ const CoursePreview = ({
           <StyledImg fluid={coverImage.childImageSharp.fluid} alt={title} />
         </div>
         <CardContent>
-          <small>Última atualização: {moment(lastUpdated).format("L")}</small>
+          <small>Última atualização: {lastUpdatedFormatted}</small>
           <h3>{title}</h3>
           <p>
             <svg

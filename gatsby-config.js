@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Marketing Digital 2019/2020`,
-    description: `Vídeos de suporte para as aulas de Marketing Digital do 1º ano de Publicidade e Marketing da Escola Superior de Comunicação Social.`,
+    title: `Cursos BrunoBrito.PT`,
+    description: `Cursos gratuitos de Marketing Digital e Programação Web, desenvolvidos por Bruno Brito.`,
     author: `@the_bammer`,
   },
   plugins: [
