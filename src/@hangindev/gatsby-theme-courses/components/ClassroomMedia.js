@@ -1,5 +1,5 @@
 import React from "react"
-import Img from "gatsby-image"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { navigate } from "gatsby"
 import YoutubePlayer from "./YoutubePlayer"
 import { useAppValue } from "../context/AppContext"
@@ -29,15 +29,19 @@ function ClassroomMedia() {
     )
   }
 
-  if (currentCourse.coverImage) {
+  const image = currentCourse.coverImage ? getImage(currentCourse.coverImage) : null
+
+  if (image) {
     return (
-      <Img
-        fluid={currentCourse.coverImage.childImageSharp.fluid}
+      <GatsbyImage
+        image={image}
         alt={
           currentLesson && currentLesson.title
             ? currentLesson.title
             : currentCourse.title
         }
+        style={{ width: "100%" }}
+        objectFit="cover"
       />
     )
   }

@@ -34,11 +34,8 @@ const Wrapper = styled.div`
 function VideoSelectorHeader({ className }) {
   const { location, currentCourse } = usePageValue()
   const { lessons } = currentCourse
-  let nowPlaying
   const nowPlayingIndex = findIndex(lessons, ["slug", location.pathname])
-  if (nowPlayingIndex !== -1) {
-    nowPlaying = lessons[nowPlayingIndex]
-  }
+
   return (
     <Wrapper className={className}>
       {nowPlayingIndex === -1 && (

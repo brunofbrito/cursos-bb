@@ -32,6 +32,7 @@ const Footer = () => {
             href="https://linkedin.com/in/brunobrito"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Bruno Brito no LinkedIn"
           >
             <svg
               aria-hidden="true"

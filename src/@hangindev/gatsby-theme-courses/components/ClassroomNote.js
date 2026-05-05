@@ -1,6 +1,5 @@
 import React from "react"
 import styled from "styled-components"
-import { MDXRenderer } from "gatsby-plugin-mdx"
 import { usePageValue } from "../context/PageContext"
 import findIndex from "lodash/findIndex"
 import NowPlaying from "./NowPlaying"
@@ -79,20 +78,13 @@ const Wrapper = styled.div`
 `
 
 function ClassroomNote({ className }) {
-  const { location, currentCourse, currentLesson } = usePageValue()
+  const { location, currentCourse, currentLesson, mdxChildren } = usePageValue()
   const { lessons } = currentCourse
-  let nowPlaying
   const nowPlayingIndex = findIndex(lessons, ["slug", location.pathname])
-  if (nowPlayingIndex !== -1) {
-    nowPlaying = lessons[nowPlayingIndex]
-  }
-  const mdxBody =
-    currentLesson && currentLesson.body
-      ? currentLesson.body
-      : currentCourse.body
+
   return (
     <Wrapper className={className}>
-      {currentLesson && (
+      {currentLesson && nowPlayingIndex !== -1 && (
         <NowPlaying
           index={nowPlayingIndex + 1}
           lessons={lessons.length}
@@ -100,7 +92,7 @@ function ClassroomNote({ className }) {
           duration={currentLesson.duration}
         />
       )}
-      {mdxBody && <MDXRenderer>{mdxBody}</MDXRenderer>}
+      {mdxChildren}
     </Wrapper>
   )
 }

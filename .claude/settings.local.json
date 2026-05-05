@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm --version)",
+      "Bash(asdf plugin *)",
+      "Bash(asdf list *)",
+      "Bash(npm install *)",
+      "Bash(/Users/brunobrito/.asdf/shims/node *)",
+      "Bash(/Users/brunobrito/.asdf/shims/npm install *)",
+      "Bash(/Users/brunobrito/.asdf/shims/npm info *)",
+      "Bash(/Users/brunobrito/.asdf/shims/node_modules/.bin/gatsby develop *)",
+      "Bash(/Users/brunobrito/.asdf/shims/npx gatsby *)",
+      "Read(//opt/homebrew/Cellar/openexr/3.4.9/lib/**)",
+      "Read(//opt/homebrew/Cellar/openexr/**)",
+      "Bash(brew list *)",
+      "Bash(otool -L /Users/brunobrito/Sites/cursos-bb/node_modules/sharp/build/Release/sharp.node)",
+      "Bash(brew reinstall *)",
+      "Bash(npm show *)",
+      "Bash(yarn install *)",
+      "Bash(python3 -c \"import sys,json; v=json.load\\(sys.stdin\\); print\\(v[-10:]\\)\")",
+      "Bash(python3 -c \"import sys,json; v=json.load\\(sys.stdin\\); print\\(v[-8:]\\)\")",
+      "Bash(python3 -c \"import sys,json; v=json.load\\(sys.stdin\\); print\\(v[-6:]\\)\")",
+      "Bash(yarn gatsby *)"
+    ]
+  }
+}

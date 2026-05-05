@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import Img from "gatsby-image"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import styled from "styled-components"
 import PropTypes from "prop-types"
 import * as moment from "moment"
@@ -45,15 +45,6 @@ const CardContent = styled.div`
     font-size: 14px;
   }
 `
-const StyledImg = styled(Img)`
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-`
 
 const CoursePreview = ({
   id,
@@ -68,11 +59,24 @@ const CoursePreview = ({
     lessons.reduce((pv, cv) => pv + cv.duration, 0)
   )
   const lastUpdatedFormatted = moment(lastUpdated).format("L")
+  const image = getImage(coverImage)
   return (
     <Card>
       <Link to={slug}>
-        <div>
-          <StyledImg fluid={coverImage.childImageSharp.fluid} alt={title} />
+        <div style={{ position: "relative", paddingBottom: "56.25%" }}>
+          {image && (
+            <GatsbyImage
+              image={image}
+              alt={title}
+              style={{
+                position: "absolute",
+                inset: 0,
+                width: "100%",
+                height: "100%",
+              }}
+              objectFit="cover"
+            />
+          )}
         </div>
         <CardContent>
           <small>Última atualização: {lastUpdatedFormatted}</small>
@@ -123,7 +127,7 @@ CoursePreview.propTypes = {
   lastUpdated: PropTypes.string.isRequired,
   coverImage: PropTypes.shape({
     childImageSharp: PropTypes.shape({
-      fluid: PropTypes.object.isRequired,
+      gatsbyImageData: PropTypes.object.isRequired,
     }),
   }),
   lessons: PropTypes.arrayOf(
