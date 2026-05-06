@@ -25,6 +25,12 @@ const ButtonText = styled.div`
   }
 `
 
+const Wrapper = styled.div`
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+`
+
 function VideoSelectorHeader({ className }) {
   const { location, currentCourse } = usePageValue()
   const { lessons } = currentCourse
@@ -34,7 +40,7 @@ function VideoSelectorHeader({ className }) {
     nowPlaying = lessons[nowPlayingIndex]
   }
   return (
-    <div className={className}>
+    <Wrapper className={className}>
       {nowPlayingIndex === -1 && (
         <Link to={lessons[0].slug}>
           <ButtonText>
@@ -56,7 +62,7 @@ function VideoSelectorHeader({ className }) {
           </ButtonText>
         </Link>
       )}
-    </div>
+    </Wrapper>
   )
 }
 
