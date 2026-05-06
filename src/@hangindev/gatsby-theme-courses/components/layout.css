@@ -28,8 +28,9 @@
 .title-bar h1 {
   color: var(--black);
   font-weight: 700;
-  font-size: 3rem;
-  line-height: 4rem;
+  font-size: 60px;
+  line-height: 72px;
+  letter-spacing: -2.5px;
   padding-left: 1rem;
   padding-right: 1rem;
 }
@@ -52,7 +53,38 @@ a {
     min-height: 120px;
   }
   .title-bar h1 {
-    font-size: 24px;
-    line-height: 30px;
+    font-size: 32px;
+    line-height: 40px;
+    letter-spacing: -1px;
   }
+}
+
+/* Dark mode */
+body,
+.title-bar,
+.title-bar h1 {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+html.dark-mode body {
+  background-color: #1e1e1e;
+  color: #ffffff;
+}
+
+html.dark-mode h1,
+html.dark-mode h2,
+html.dark-mode h3,
+html.dark-mode h4,
+html.dark-mode h5,
+html.dark-mode h6,
+html.dark-mode p {
+  color: #ffffff;
+}
+
+html.dark-mode .title-bar {
+  background: #111111;
+}
+
+html.dark-mode .title-bar h1 {
+  color: #ffffff;
 }

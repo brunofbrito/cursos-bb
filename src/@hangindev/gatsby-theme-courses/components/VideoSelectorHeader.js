@@ -26,7 +26,7 @@ const ButtonText = styled.div`
 `
 
 const Wrapper = styled.div`
-  max-width: 760px;
+  max-width: 960px;
   margin-left: auto;
   margin-right: auto;
 `

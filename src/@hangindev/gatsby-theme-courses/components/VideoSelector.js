@@ -8,6 +8,10 @@ const Selector = styled.div`
   background: var(--light-grey);
   box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.1);
   padding: 1rem 0;
+  transition: background-color 0.3s ease;
+  html.dark-mode & {
+    background: #2a2a2a;
+  }
 `
 
 function VideoSelector() {

@@ -32,6 +32,13 @@ const List = styled.ul`
   p:hover {
     color: var(--accent);
   }
+  html.dark-mode & li {
+    border-bottom-color: #3a3a3a;
+  }
+  html.dark-mode & .active p,
+  html.dark-mode & .active p:hover {
+    color: #ffffff;
+  }
 `
 const ListItem = styled.div`
   display: flex;
@@ -63,6 +70,12 @@ const ListItem = styled.div`
       font-size: 0.8rem;
       padding: 0.7rem;
     }
+  }
+  html.dark-mode & p {
+    color: #e0e0e0;
+  }
+  html.dark-mode & small {
+    color: #9b9b9b;
   }
 `
 
