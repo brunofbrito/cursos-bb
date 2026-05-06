@@ -7,6 +7,9 @@ import NowPlaying from "./NowPlaying"
 
 const Wrapper = styled.div`
   padding-top: var(--medium);
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
   h1,
   h2,
   h3 {
@@ -18,6 +21,10 @@ const Wrapper = styled.div`
   }
   h2 {
     font-size: 1.7rem;
+  }
+  h3 {
+    font-weight: 700;
+    font-size: 1.35rem;
   }
   p {
     font-size: 17px;
@@ -32,13 +39,42 @@ const Wrapper = styled.div`
       color: var(--accent-hover);
     }
   }
-  ul {
-    list-style: square;
+  ul,
+  ol {
     list-style-position: inside;
     padding-bottom: 1rem;
   }
+  ul {
+    list-style: square;
+    list-style-position: inside;
+  }
+  ol {
+    list-style: decimal;
+    list-style-position: inside;
+  }
   li {
     line-height: 2rem;
+  }
+  table {
+    width: 100%;
+    margin: 1rem 0 1.5rem;
+    border-collapse: collapse;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  th,
+  td {
+    border: 1px solid #e6e6e6;
+    padding: 0.75rem;
+    text-align: left;
+    vertical-align: top;
+  }
+  th {
+    background: var(--light-grey);
+    font-weight: 700;
+  }
+  tr:nth-child(even) td {
+    background: #fbfbfb;
   }
 `
 
