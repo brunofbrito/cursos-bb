@@ -10,14 +10,16 @@ import durationInLongText from "../utils/durationInLongText"
 const Card = styled.div`
   position: relative;
   background: var(--white);
-  transition: 0.3s cubic-bezier(0.25, 0.8, 0.5, 1);
-  box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.1);
   transition: ease-in-out 0.3s all;
+  box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.1);
   &:hover {
     box-shadow: 0px 8px 35px 0px rgba(0, 0, 0, 0.13);
   }
   &:hover h3 {
     color: var(--accent);
+  }
+  html.dark-mode & {
+    background: #2a2a2a;
   }
 `
 const CardContent = styled.div`
@@ -43,6 +45,9 @@ const CardContent = styled.div`
   small {
     color: #444444;
     font-size: 14px;
+  }
+  html.dark-mode & small {
+    color: #9b9b9b;
   }
 `
 
