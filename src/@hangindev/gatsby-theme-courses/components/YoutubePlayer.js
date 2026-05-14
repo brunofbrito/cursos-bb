@@ -21,7 +21,6 @@ function YoutubePlayer({ autoplay, className, id, aspectRatio, ...props }) {
       <StyledYoutube
         videoId={id}
         opts={{
-          host: "https://www.youtube-nocookie.com",
           playerVars: { autoplay: autoplay ? 1 : 0 },
           width: "100%",
           height: "100%",

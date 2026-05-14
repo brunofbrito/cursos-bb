@@ -23,6 +23,7 @@ function SEO({ description, lang = "en", meta = [], title }) {
     <>
       <html lang={lang} />
       <title>{`${title} | ${site.siteMetadata.title}`}</title>
+      <meta name="referrer" content="strict-origin-when-cross-origin" />
       <meta name="description" content={metaDescription} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={metaDescription} />

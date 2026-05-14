@@ -76,6 +76,7 @@ export function Head({ data: { currentLesson }, pageContext: { currentCourse } }
   return (
     <>
       <title>{title} | BrunoBrito.PT</title>
+      <meta name="referrer" content="strict-origin-when-cross-origin" />
       <meta name="description" content={`${title} - ${currentCourse.title}`} />
       <meta property="og:title" content={title} />
       <meta property="og:type" content="website" />
